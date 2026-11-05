@@ -1,0 +1,196 @@
+{
+  "id": "a5cd158e-c526-438c-8ae2-a3fca5cb900a",
+  "version": "2.0",
+  "name": "ProjetoFoodExpress",
+  "url": "http://localhost:5173",
+  "tests": [{
+    "id": "f9c1c12b-c3d1-44e2-96d0-213433b293df",
+    "name": "Login inválido",
+    "commands": [{
+      "id": "16e67562-3a57-437e-9c7b-e979e2cc778f",
+      "comment": "",
+      "command": "open",
+      "target": "/login",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "a46217dc-7bc9-4f39-b336-9ddbdf9a365c",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1936x1048",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "df9e96aa-4880-43bb-85a7-e40f325dcb81",
+      "comment": "",
+      "command": "click",
+      "target": "css=.login-input:nth-child(1)",
+      "targets": [
+        ["css=.login-input:nth-child(1)", "css:finder"],
+        ["xpath=//input[@value='']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div[2]/form/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "9fa2f239-bb07-422c-b7c7-eea48da78af5",
+      "comment": "",
+      "command": "type",
+      "target": "css=.login-input:nth-child(1)",
+      "targets": [
+        ["css=.login-input:nth-child(1)", "css:finder"],
+        ["xpath=//input[@value='edrdaz@gmail.com']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div[2]/form/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "edrdaz@gmail.com"
+    }, {
+      "id": "6f439c91-a9b5-4028-9a9c-faad509da0a2",
+      "comment": "",
+      "command": "click",
+      "target": "css=.login-input:nth-child(2)",
+      "targets": [
+        ["css=.login-input:nth-child(2)", "css:finder"],
+        ["xpath=//input[@value='']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div[2]/form/input[2]", "xpath:idRelative"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "9b19e62e-4c55-4b57-ac2d-8ee0501432ff",
+      "comment": "",
+      "command": "type",
+      "target": "css=.login-input:nth-child(2)",
+      "targets": [
+        ["css=.login-input:nth-child(2)", "css:finder"],
+        ["xpath=//input[@value='1234']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div[2]/form/input[2]", "xpath:idRelative"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": "1234"
+    }, {
+      "id": "9157b663-15cd-4737-8956-f4212680fae1",
+      "comment": "",
+      "command": "click",
+      "target": "css=.login-button",
+      "targets": [
+        ["css=.login-button", "css:finder"],
+        ["xpath=//button[@type='submit']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div[2]/form/button", "xpath:idRelative"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'Entrar')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "4a323c0c-046e-4585-aae3-ad9da382833f",
+      "comment": "",
+      "command": "assertAlert",
+      "target": "Erro ao fazer login: Invalid login credentials",
+      "targets": [],
+      "value": ""
+    }]
+  }, {
+    "id": "91bf4ee0-b8d7-4622-bcf6-5fe2731d932c",
+    "name": "Login válido",
+    "commands": [{
+      "id": "f4acc93b-e345-4261-801b-73aae77cc832",
+      "comment": "",
+      "command": "open",
+      "target": "/login",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "20cea0d1-d06e-4be0-ab6d-da1a24db7c70",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1936x1048",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "ef57471d-f339-4350-8fe9-4879b449aaa2",
+      "comment": "",
+      "command": "click",
+      "target": "css=.login-input:nth-child(1)",
+      "targets": [
+        ["css=.login-input:nth-child(1)", "css:finder"],
+        ["xpath=//input[@value='']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div[2]/form/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "a91efb69-8261-418f-a92c-a16bea68226a",
+      "comment": "",
+      "command": "type",
+      "target": "css=.login-input:nth-child(1)",
+      "targets": [
+        ["css=.login-input:nth-child(1)", "css:finder"],
+        ["xpath=//input[@value='edrdaz@gmail.com']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div[2]/form/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "edrdaz@gmail.com"
+    }, {
+      "id": "957269ea-0b61-4ad8-9cb8-0d26af49064c",
+      "comment": "",
+      "command": "click",
+      "target": "css=.login-input:nth-child(2)",
+      "targets": [
+        ["css=.login-input:nth-child(2)", "css:finder"],
+        ["xpath=//input[@value='']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div[2]/form/input[2]", "xpath:idRelative"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "9c9963ff-c0a5-4570-8613-0f328c01a65b",
+      "comment": "",
+      "command": "type",
+      "target": "css=.login-input:nth-child(2)",
+      "targets": [
+        ["css=.login-input:nth-child(2)", "css:finder"],
+        ["xpath=//input[@value='123456']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div[2]/form/input[2]", "xpath:idRelative"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": "123456"
+    }, {
+      "id": "41e1b557-4a00-4ce9-9530-7de7527ba226",
+      "comment": "",
+      "command": "click",
+      "target": "css=.login-button",
+      "targets": [
+        ["css=.login-button", "css:finder"],
+        ["xpath=//button[@type='submit']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div[2]/form/button", "xpath:idRelative"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'Entrar')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "523d2da8-c41f-4e90-bc5c-3d8df141771e",
+      "comment": "",
+      "command": "assertAlert",
+      "target": "Login realizado com sucesso!",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "b8d46969-a686-4cb4-b0c9-0937c224d6de",
+      "comment": "",
+      "command": "close",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }]
+  }],
+  "suites": [{
+    "id": "bc1aa6a2-178a-4388-bdf5-f75d48b5a249",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": []
+  }],
+  "urls": ["http://localhost:5173/"],
+  "plugins": []
+}

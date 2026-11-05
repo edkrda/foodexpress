@@ -1,0 +1,409 @@
+{
+  "info": {
+    "_postman_id": "0288e681-5c67-428c-b644-629973c689ab",
+    "name": "Testes de Autenticação - Supabase",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "59554287",
+    "_collection_link": "https://go.postman.co/collection/59554287-0288e681-5c67-428c-b644-629973c689ab?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "01 - Login Válido",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test(\"Login válido retorna status 200\", function () {\r\n    pm.response.to.have.status(200);\r\n});\r\n\r\npm.test(\"Resposta contém access_token\", function () {\r\n    const resposta = pm.response.json();\r\n    pm.expect(resposta.access_token).to.exist;\r\n});"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "apikey",
+            "value": "{{api_key}}"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"email\": \"edufrda@gmail.com\",\r\n  \"password\": \"duda1234\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{base_url}}/auth/v1/token?grant_type=password",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "auth",
+            "v1",
+            "token"
+          ],
+          "query": [
+            {
+              "key": "grant_type",
+              "value": "password"
+            }
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "01 - Login Válido",
+          "originalRequest": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "apikey",
+                "value": "{{api_key}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"email\": \"edufrda@gmail.com\",\r\n  \"password\": \"duda1234\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base_url}}/auth/v1/token?grant_type=password",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "auth",
+                "v1",
+                "token"
+              ],
+              "query": [
+                {
+                  "key": "grant_type",
+                  "value": "password"
+                }
+              ]
+            }
+          },
+          "_postman_previewlanguage": "json",
+          "header": [
+            {
+              "key": ":status",
+              "value": "200"
+            },
+            {
+              "key": "date",
+              "value": "Wed, 04 Nov 2026 16:22:56 GMT"
+            },
+            {
+              "key": "content-type",
+              "value": "application/json"
+            },
+            {
+              "key": "cf-ray",
+              "value": "a554f5d55d58cb20-GIG"
+            },
+            {
+              "key": "cf-cache-status",
+              "value": "DYNAMIC"
+            },
+            {
+              "key": "content-encoding",
+              "value": "gzip"
+            },
+            {
+              "key": "server",
+              "value": "cloudflare"
+            },
+            {
+              "key": "strict-transport-security",
+              "value": "max-age=31536000; includeSubDomains; preload"
+            },
+            {
+              "key": "vary",
+              "value": "Origin, Accept-Encoding"
+            },
+            {
+              "key": "x-content-type-options",
+              "value": "nosniff"
+            },
+            {
+              "key": "sb-auth-refresh-token-prefix",
+              "value": "cgxef"
+            },
+            {
+              "key": "sb-auth-session-id",
+              "value": "{{authorization_secret_-_uuid}}"
+            },
+            {
+              "key": "sb-auth-user-id",
+              "value": "{{authorization_secret_-_uuid}}"
+            },
+            {
+              "key": "sb-gateway-version",
+              "value": "1"
+            },
+            {
+              "key": "sb-project-ref",
+              "value": "mgvjwuletdppdrsvpdft"
+            },
+            {
+              "key": "sb-request-id",
+              "value": "01a1a75e-e165-7dcd-9948-e89e30b4ec69"
+            },
+            {
+              "key": "x-envoy-attempt-count",
+              "value": "1"
+            },
+            {
+              "key": "x-envoy-upstream-service-time",
+              "value": "223"
+            },
+            {
+              "key": "set-cookie",
+              "value": "__cf_bm=_yuVn8kSN.89vpKFboMP1yUkKBne0Rgri7SFWfKFNmY-1793809375.5780778-1.0.1.1-dzcNqzBbqPEYhqHxzsCRJP3giJyLc3jbNdwJrxOVZ3f_LxyEBQOjNErJy3TwCy1HrPVLpi81CW4VJVwS8AsnbVpXSgI9UtryWn4BXMLT5dgWEh4LThFzuwMnhPZf6tAj; HttpOnly; SameSite=None; Secure; Path=/; Domain=supabase.co; Expires=Wed, 04 Nov 2026 16:52:56 GMT"
+            },
+            {
+              "key": "alt-svc",
+              "value": "h3=\":443\"; ma=86400"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n  \"access_token\": \"eyJhbGciOiJFUzI1NiIsImtpZCI6IjFlYmI4OTczLWRhYTAtNDdiZi1iNTY2LTA2YTUzZjA2YWM3OCIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJodHRwczovL21ndmp3dWxldGRwcGRyc3ZwZGZ0LnN1cGFiYXNlLmNvL2F1dGgvdjEiLCJzdWIiOiIyNTJjNTRjNi04NWY4LTQ3M2EtODU1Ni00OWQ2ZTEyNTcxNDQiLCJhdWQiOiJhdXRoZW50aWNhdGVkIiwiZXhwIjoxNzkzODEyOTc2LCJpYXQiOjE3OTM4MDkzNzYsImVtYWlsIjoiZWR1ZnJkYUBnbWFpbC5jb20iLCJwaG9uZSI6IiIsImFwcF9tZXRhZGF0YSI6eyJwcm92aWRlciI6ImVtYWlsIiwicHJvdmlkZXJzIjpbImVtYWlsIl19LCJ1c2VyX21ldGFkYXRhIjp7ImVtYWlsX3ZlcmlmaWVkIjp0cnVlfSwicm9sZSI6ImF1dGhlbnRpY2F0ZWQiLCJhYWwiOiJhYWwxIiwiYW1yIjpbeyJtZXRob2QiOiJwYXNzd29yZCIsInRpbWVzdGFtcCI6MTc5MzgwOTM3Nn1dLCJzZXNzaW9uX2lkIjoiOWFkMmFjZGUtOWY2Mi00ZGYwLWFlMGQtMzUwNWY0YjdmNWM5IiwiaXNfYW5vbnltb3VzIjpmYWxzZX0.yRc3boSzznCHsHaD4tZElMcfrpvxkOVRRAJa7Uju-lY9szncoUlNmGIci107SiYLPt8xJ0bCVnuAZzxXYmQ_1Q\",\n  \"token_type\": \"bearer\",\n  \"expires_in\": 3600,\n  \"expires_at\": 1793812976,\n  \"refresh_token\": \"cgxefnyat3if\",\n  \"user\": {\n    \"id\": \"252c54c6-85f8-473a-8556-49d6e1257144\",\n    \"aud\": \"authenticated\",\n    \"role\": \"authenticated\",\n    \"email\": \"edufrda@gmail.com\",\n    \"email_confirmed_at\": \"2026-11-04T15:52:56.405918Z\",\n    \"phone\": \"\",\n    \"confirmed_at\": \"2026-11-04T15:52:56.405918Z\",\n    \"last_sign_in_at\": \"2026-11-04T16:22:56.594547413Z\",\n    \"app_metadata\": {\n      \"provider\": \"email\",\n      \"providers\": [\n        \"email\"\n      ]\n    },\n    \"user_metadata\": {\n      \"email_verified\": true\n    },\n    \"identities\": [\n      {\n        \"identity_id\": \"f5982000-9d40-46f4-9a06-6c6dec28a0f0\",\n        \"id\": \"252c54c6-85f8-473a-8556-49d6e1257144\",\n        \"user_id\": \"252c54c6-85f8-473a-8556-49d6e1257144\",\n        \"identity_data\": {\n          \"email\": \"edufrda@gmail.com\",\n          \"email_verified\": false,\n          \"phone_verified\": false,\n          \"sub\": \"252c54c6-85f8-473a-8556-49d6e1257144\"\n        },\n        \"provider\": \"email\",\n        \"last_sign_in_at\": \"2026-11-04T15:52:56.396461Z\",\n        \"created_at\": \"2026-11-04T15:52:56.396535Z\",\n        \"updated_at\": \"2026-11-04T15:52:56.396535Z\",\n        \"email\": \"edufrda@gmail.com\"\n      }\n    ],\n    \"created_at\": \"2026-11-04T15:52:56.386216Z\",\n    \"updated_at\": \"2026-11-04T16:22:56.611185Z\",\n    \"is_anonymous\": false\n  },\n  \"weak_password\": null\n}"
+        }
+      ]
+    },
+    {
+      "name": "02 - Senha Login Incorreta",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test(\"Login inválido retorna status 400\", function () {\r\n    pm.response.to.have.status(400);\r\n});\r\n\r\npm.test(\"Resposta informa credenciais inválidas\", function () {\r\n    const resposta = pm.response.json();\r\n    pm.expect(resposta.error_code).to.eql(\"invalid_credentials\");\r\n});"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "apikey",
+            "value": "{{api_key}}"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"email\": \"edufrda@gmail.com\",\r\n  \"password\": \"senhaerrada\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{base_url}}/auth/v1/token?grant_type=password",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "auth",
+            "v1",
+            "token"
+          ],
+          "query": [
+            {
+              "key": "grant_type",
+              "value": "password"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "03 – Usuário Inexistente",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test(\"Login inválido retorna status 400\", function () {\r\n    pm.response.to.have.status(400);\r\n});\r\n\r\npm.test(\"Resposta informa credenciais inválidas\", function () {\r\n    const resposta = pm.response.json();\r\n    pm.expect(resposta.error_code).to.eql(\"invalid_credentials\");\r\n});"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "apikey",
+            "value": "{{api_key}}"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"email\": \"usuarioinexistente999@exemplo.com\",\r\n  \"password\": \"SenhaTeste123!\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{base_url}}/auth/v1/token?grant_type=password",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "auth",
+            "v1",
+            "token"
+          ],
+          "query": [
+            {
+              "key": "grant_type",
+              "value": "password"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "04- Campos vazios",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test(\"Login inválido retorna status 400\", function () {\r\n    pm.response.to.have.status(400);\r\n});\r\n\r\npm.test(\"Resposta informa credenciais inválidas\", function () {\r\n    const resposta = pm.response.json();\r\n    pm.expect(resposta.error_code).to.eql(\"invalid_credentials\");\r\n});"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "apikey",
+            "value": "{{api_key}}"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"email\": \"\",\r\n  \"password\": \"\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{base_url}}/auth/v1/token?grant_type=password",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "auth",
+            "v1",
+            "token"
+          ],
+          "query": [
+            {
+              "key": "grant_type",
+              "value": "password"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "05- Credenciais inválidas",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test(\"Login inválido retorna status 400\", function () {\r\n    pm.response.to.have.status(400);\r\n});\r\n\r\npm.test(\"Resposta informa credenciais inválidas\", function () {\r\n    const resposta = pm.response.json();\r\n    pm.expect(resposta.error_code).to.eql(\"invalid_credentials\");\r\n});"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "apikey",
+            "value": "{{api_key}}"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"email\": \"emailinvalido\",\r\n  \"password\": \"SenhaErrada123!\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{base_url}}/auth/v1/token?grant_type=password",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "auth",
+            "v1",
+            "token"
+          ],
+          "query": [
+            {
+              "key": "grant_type",
+              "value": "password"
+            }
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}
